@@ -1,22 +1,25 @@
 // This is our main function
 function fizzbuzz() {
-    //const range = prompt("What number do you want to print up to?")
+    const args = process.argv
+    let range = args[2]
+    let rules = args.slice(3, args.length)
+    console.log(rules)
 
-    for (let i = 1; i < 301; i++){
+    for (let i = 1; i < range; i++){
         let words = []
-        if (i%3 == 0){
+        if (i%3 == 0 && rules.includes('3')){
             words.push("Fizz")
         }
-        if (i%5 == 0){
+        if (i%5 == 0 && rules.includes('5')){
             words.push("Buzz")
         }
-        if (i%7 == 0){
+        if (i%7 == 0 && 7 && rules.includes('7')){
             words.push("Bang")
         }
-        if (i%11 == 0){
+        if (i%11 == 0 && rules.includes('11')){
             words = ["Bong"]
         }
-        if (i%13 == 0){
+        if (i%13 == 0 && rules.includes('13')){
             if (words.length == 0){
                 words = ["Fezz"]
             } else{
@@ -30,7 +33,7 @@ function fizzbuzz() {
                 }       
             }
         }
-        if (i%17 == 0){
+        if (i%17 == 0 && rules.includes('17')){
             words.reverse()
         }
 
