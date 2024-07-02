@@ -1,9 +1,15 @@
 // This is our main function
-function fizzbuzz() {
+function fizzbuzz(r) {
+    let final = []
     const args = process.argv
     let range = args[2]
     let rules = args.slice(3, args.length)
-    console.log(rules)
+
+    if (args.length == 2){
+        range = r+1
+        rules = ['3','5','7','11','13','17']
+    }
+
 
     for (let i = 1; i < range; i++){
         let words = []
@@ -40,18 +46,23 @@ function fizzbuzz() {
 
         //Outputing words + numbers
         if (words.length == 0){
-            console.log(i)
+            //console.log(i)
+            final.push(i)
         } else {
             let word = ""
             for (let j = 0; j < words.length; j++){
                 word += words[j]
             }
-            console.log(word)
+            //console.log(word)
+            final.push(word)
         }
     }
 
+    return final
 }
 
 // Now, we run the main function:
 fizzbuzz();
+
+module.exports = fizzbuzz
 
